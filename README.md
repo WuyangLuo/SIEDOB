@@ -33,7 +33,9 @@ Download the original dataset [Cityscapes](https://www.cityscapes-dataset.com/).
 
 `object_datasets/` has the subfolders `train/` and `test/`. `train/` and `test/` should each have their own subfolders `images/` and `inst_map/`.
 
-We include some examples in `data/`. `data/predefined_mask/` and `data/cityscapes512x256/object_datasets/object_mask/` contains pre-generated mask maps for evaluating.
+We include some examples in `data/`. 
+
+`data/predefined_mask/` and `data/cityscapes512x256/object_datasets/object_mask/` contains pre-generated mask maps for evaluating.
 
 
 
