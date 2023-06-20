@@ -25,7 +25,7 @@ Here, let's take Cityscapes dataset as an example.
 Download the original dataset [Cityscapes](https://www.cityscapes-dataset.com/). Create folder `data/dataset_name/` with subfolders `train/` and `test/`. `train/` and `test/` should each have their own subfolders `images/`, `labels/`, `inst_map/`.
 - `images/`: Original images.
 - `labels/`: Segmentation maps.
-- `inst_map/`(optional): Instance maps for generating edge maps. We find edge maps only have a slight impact. If there is no instance map, it can be omitted or replaced with segmentation map.
+- `inst_map/`: Instance maps.
 
 We include some examples in `data/`, so you can run the training without preparing the dataset. `data/predefined_mask/` contains pre-generated mask maps for testing.
 
