@@ -27,9 +27,9 @@ Download the original dataset [Cityscapes](https://www.cityscapes-dataset.com/).
 - `images/`: Original images.
 - `labels/`: Segmentation maps.
 - `inst_map/`: Instance maps.
-- 'images2048/': Original 2048x1024 resolution images (To crop high quality object images for training)
+- 'images2048/': Original 2048x1024 resolution images (To crop high quality object images for training).
 
-`test/` only has `images/`, `labels/`, `inst_map/`.
+`test/` only has `images/`, `labels/`, `inst_map/`. We resize all testing images to 512x256 resolution and randomly crop them to 256x256 image patches.
 
 We include some examples in `data/`, so you can run the training without preparing the dataset. `data/predefined_mask/` contains pre-generated mask maps for testing.
 
