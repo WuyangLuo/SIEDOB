@@ -31,9 +31,9 @@ Download the original dataset [Cityscapes](https://www.cityscapes-dataset.com/).
 
 `test/` only has `images/`, `labels/`, `inst_map/`. We resize all testing images to 512x256 resolution and randomly crop them to 256x256 image patches. 
 
-`object_datasets/` has the subfolders `train/` and `test/`. `train/` and `test/` should each have their own subfolders `images/`, and `inst_map/`.
+`object_datasets/` has the subfolders `train/` and `test/`. `train/` and `test/` should each have their own subfolders `images/` and `inst_map/`.
 
-We include some examples in `data/`, so you can run the training without preparing the dataset. `data/predefined_mask/` contains pre-generated mask maps for testing.
+We include some examples in `data/`. `data/predefined_mask/` and `data/cityscapes512x256/object_datasets/object_mask/` contains pre-generated mask maps for evaluating.
 
 
 
