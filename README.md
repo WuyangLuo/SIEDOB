@@ -22,10 +22,14 @@ Our method can well handle dense objects overlapping each other and generate tex
 Here, let's take Cityscapes dataset as an example.
 
 ### Dataset Preparation
-Download the original dataset [Cityscapes](https://www.cityscapes-dataset.com/). Create folder `data/dataset_name/` with subfolders `train/` and `test/`. `train/` and `test/` should each have their own subfolders `images/`, `labels/`, `inst_map/`.
+Download the original dataset [Cityscapes](https://www.cityscapes-dataset.com/). Create folder `data/cityscapes512x256/` with subfolders `train/` and `test/`. 
+`train/` has the subfolders named `images/`, `labels/`, `inst_map/`, 'images2048/'. We resize all training images to 512x256 resolution.
 - `images/`: Original images.
 - `labels/`: Segmentation maps.
 - `inst_map/`: Instance maps.
+- 'images2048/': Original 2048x1024 resolution images (To crop high quality object images for training)
+
+`test/` only has `images/`, `labels/`, `inst_map/`.
 
 We include some examples in `data/`, so you can run the training without preparing the dataset. `data/predefined_mask/` contains pre-generated mask maps for testing.
 
