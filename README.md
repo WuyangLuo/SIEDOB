@@ -65,7 +65,7 @@ python train.py
 
 ## Testing
 
-Download pretrained sub-networks from [BaiDuYun (password:rlg6)](https://pan.baidu.com/s/1Hcc2ufhOSPpmMuZ1ttrTzw) | [GoogleDrive](https://drive.google.com/file/d/1rBt9LS8ZueQnOwplIGNED2B22on1VvUd/view?usp=sharing) and set the relevant paths.
+Download pretrained sub-networks from [BaiDuYun (password:rlg6)](https://pan.baidu.com/s/1Hcc2ufhOSPpmMuZ1ttrTzw) | [GoogleDrive](https://drive.google.com/file/d/161SZeTtVI4RsTJIjt0zpt-1br2Qsq2D1/view?usp=sharing) and set the relevant paths.
 
 Go into `fusion/` and run:
 ```
