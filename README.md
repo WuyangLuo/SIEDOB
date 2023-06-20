@@ -17,12 +17,8 @@ Our method can well handle dense objects overlapping each other and generate tex
 
 - The code has been tested with PyTorch 1.10.1 and Python 3.7.11. We train our model with a NIVIDA RTX3090 GPU.
 
-
-## Training
-Here, let's take Cityscapes dataset as an example.
-
 ### Dataset Preparation
-Download the original dataset [Cityscapes](https://www.cityscapes-dataset.com/). Create folder `data/cityscapes512x256/` with subfolders `train/`, `test/`, and `object_datasets/`. 
+Here, let's take Cityscapes dataset as an example. Download the original dataset [Cityscapes](https://www.cityscapes-dataset.com/). Create folder `data/cityscapes512x256/` with subfolders `train/`, `test/`, and `object_datasets/`. 
 `train/` has the subfolders named `images/`, `labels/`, `inst_map/`, `images2048/`. We resize all training images to 512x256 resolution.
 - `images/`: Original images.
 - `labels/`: Segmentation maps.
@@ -31,12 +27,63 @@ Download the original dataset [Cityscapes](https://www.cityscapes-dataset.com/).
 
 `test/` only has `images/`, `labels/`, `inst_map/`. We resize all testing images to 512x256 resolution and randomly crop them to 256x256 image patches. 
 
-`object_datasets/` has the subfolders `train/` and `test/`. `train/` and `test/` should each have their own subfolders `images/` and `inst_map/`.
+We crop the object images of each foreground category from the original resolution image to build `object_datasets/`, which has the subfolders `train/` and `test/`. `train/` and `test/` should each have their own subfolders `images/` and `inst_map/`.
 
 We include some examples in `data/`. 
 
 `data/predefined_mask/` and `data/cityscapes512x256/object_datasets/object_mask/` contains pre-generated mask maps for evaluating.
 
+
+### Training
+**Step1**: Train an object inpinting sub-network.
+
+Go into `instance_inpainting/` and run:
+```
+python train.py
+```
+
+**Step2**: Train a Style-Diversity Object Generator.
+
+Go into `instance_style/` and run:
+```
+python train.py
+```
+
+**Step3**: Train a background generator.
+
+Go into `background/` and run:
+```
+python train.py
+```
+
+**Step4**: Train a final fusion network.
+
+Go into `fusion/` and run:
+```
+python train.py
+```
+
+## Testing
+
+Download pretrained sub-networks from [BaiDuYun (password:fp4v)](https://pan.baidu.com/s/12S8Ix136UhaUs8j8qyDWeA) | [GoogleDrive](https://drive.google.com/file/d/1rBt9LS8ZueQnOwplIGNED2B22on1VvUd/view?usp=sharing) and set the relevant paths.
+
+Go into `fusion/` and run:
+```
+python test_one_image.py
+```
+
+## Citation:
+If you use this code for your research, please cite our paper.
+```
+@InProceedings{Luo_2023_CVPR,
+    author    = {Luo, Wuyang and Yang, Su and Zhang, Xinjian and Zhang, Weishan},
+    title     = {SIEDOB: Semantic Image Editing by Disentangling Object and Background},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2023},
+    pages     = {1868-1878}
+}
+```
 
 
 
